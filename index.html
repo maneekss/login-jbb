@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Área de Membros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #04102b;
+      background-image: radial-gradient(circle at top left, #061b40 0%, #04102b 100%);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 40px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 360px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .login-box h2 {
+      margin-bottom: 25px;
+      font-size: 26px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      margin: 12px 0;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    input::placeholder {
+      color: #ccc;
+    }
+
+    input:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(to right, #0d6efd, #0a58ca);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #084298, #052c7d);
+    }
+
+    #mensagem {
+      margin-top: 15px;
+      color: #ff8080;
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .login-box {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Área de Membros</h2>
+    <input type="text" id="usuario" placeholder="Usuário" onkeydown="if(event.key === 'Enter') verificarLogin()">
+    <input type="password" id="senha" placeholder="Senha" onkeydown="if(event.key === 'Enter') verificarLogin()">
+    <button onclick="verificarLogin()">Entrar</button>
+    <p id="mensagem"></p>
+  </div>
+
+  <script>
+    const usuarios = {
+      "DEV.LARISSA.JBB": "07042008",
+      "MEMBRO.ANA.JBB": "08082009",
+      "ADM.EMANUEL.JBB": "23062011",
+      "MEMBRO.MARIA.JBB": "25022012",
+      "MEMBRO.GUSTAVO.JBB": "31082009",
+      "ADM.PEDRO.JBB": "30012011",
+      "ADM.AMANDA.JBB": "26022011",
+      "MEMBRO.FABIANE.JBB": "08022010",
+      "MEMBRO.MARYANA.JBB": "08082012",
+      "MEMBRO.NATALIA.JBB": "19072010",
+      "DEV.CASSIO.JBB": "12072012",
+      "MEMBRO.PEDRO.JBB": "26022014",
+      "MEMBRO.ISADORA.JBB": "15032011",
+      "MEMBRO.JOAO.JBB": "01112009",
+      "ADM.NICOLAS.JBB": "30082007",
+      "MEMBRO.MARIAPAULA.JBB": "16062008",
+      "MEMBRO.ARTUR.JBB": "07022011",
+      "MEMBRO.JULIA.JBB": "07042008",
+      "ADM.EDUARDO.JBB": "20082008",
+      "MEMBRO.FERNANDO.JBB": "14072009",
+      "MEMBRO.MARIAFERNANDA.JBB": "01022008",
+      "MEMBRO.YASMIN.JBB": "26072011",
+      "MEMBRO.JOAOVICTOR.JBB": "14072010",
+      "ADM.FERNANDOMARTINS.JBB": "12041985",
+      "ADM.ANDREIASAVOLDI.JBB": "01091978",
+      "ADM.NEUZAMISSIO.JBB": "25061976",
+      "ADM.LÉCIO.JBB": "08061065",
+      "ADM.DANIMENTZ.JBB": "26071986",
+      "ADMIN": "23062011",
+      "TESTER": "jbb"
+    };
+
+    function verificarLogin() {
+      const user = document.getElementById("usuario").value.trim().toUpperCase();
+      const pass = document.getElementById("senha").value;
+
+      if (usuarios[user] && usuarios[user] === pass) {
+        window.location.href = "https://www.beatrizbiavatti.site/login/%C3%A1rea-de-membros";
+      } else {
+        document.getElementById("mensagem").textContent = "Usuário ou senha incorretos!";
+      }
+    }
+  </script>
+
+</body>
+</html>
